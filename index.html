@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>FishBuy spreadsheet | Productlinks, maten en QC-foto’s</title>
+  <meta name="description" content="Gebruik de FishBuy spreadsheet-gids om productlinks te controleren, maten en QC-foto’s te vergelijken en een pakketraming te maken. Bekijk tien categorieën.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#142a49">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:title" content="FishBuy spreadsheet | Productlinks, maten en QC-foto’s">
+  <meta property="og:description" content="Vergelijk productlinks, maten en controlefoto’s. Gebruik het voorbeeldblad en blader door tien categorieën op HipobuyFind.">
+  <meta property="og:image" content="https://static.nike.com/a/images/w_560,c_scale,f_auto,q_auto/f888b4a3-a02a-420d-93e3-cb33c3bb30ac/AIR%2BFORCE%2B1%2B%2707.png">
+  <meta property="og:image:alt" content="Witte Nike Air Force 1 ’07 Texture sneaker">
+  <!--
+    Redactieonderzoek: Google gaf voor “FishBuy spreadsheet” een verificatiepagina.
+    De eerste tien Google-resultaten konden daardoor niet worden vastgesteld.
+    Tien raadpleegbare sites gaven context voor de volgende zoekintenties:
+    cafans.com (productlinks en totaalprijs), mickeybuys.com (verzendinformatie),
+    jadeship.com (spreadsheetindex), rep.tools (QC en actuele productlinks),
+    spreadsheetcloud.com (categorieën en controlefoto’s), supersheet.net
+    (linkcontrole en verzending), repspreadsheet.org (zoeken op model en kleur),
+    spreadsheetreps.com (categorieën en opties), repsheet.net (bronlinks en QC),
+    w2clinks.com (navigatie per agent). Dit zijn geen geverifieerde Google-posities.
+    De uiteindelijke publicatie-URL is onbekend, daarom is er geen canonical ingesteld.
+  -->
+  <link rel="preconnect" href="https://static.nike.com">
+  <style>
+    :root{color-scheme:light;--paper:#f6f8fb;--ink:#16273e;--blue:#142a49;--muted:#45556d;--line:#cbd5e2;--amber:#ffca7a;--white:#fff}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.12;letter-spacing:-.035em}
+    h1{font-size:clamp(2.45rem,6.8vw,5rem);overflow-wrap:anywhere}
+    h2{font-size:clamp(1.65rem,4vw,2.55rem)}
+    h3{font-size:1.25rem}
+    a{color:inherit;text-underline-offset:.2em}
+    a:focus-visible,summary:focus-visible,.table-scroll:focus-visible{outline:3px solid #a44300;outline-offset:4px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .mast{background:var(--blue);color:var(--white);border-bottom:1px solid #51627b}
+    .mast .wrap,.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:.4rem 1rem;flex-wrap:wrap;padding-block:.65rem}
+    .brand{font-weight:850;text-decoration:none}
+    .brand:hover{text-decoration:underline}
+    .eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    .hero{background:var(--blue);color:var(--white);padding-block:clamp(1.25rem,4vw,2.9rem)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:center;gap:1.15rem 2.5rem}
+    .hero .eyebrow{color:var(--amber);margin-bottom:.65rem}
+    .hero p:not(.eyebrow){max-width:57ch;margin-top:.85rem;color:#e8eef9}
+    .hero figure{max-width:25rem;width:100%;justify-self:end;background:#ebeff5;color:var(--ink);border-radius:.8rem;overflow:hidden}
+    img{display:block;width:100%;height:auto}
+    .hero img{aspect-ratio:4/3;object-fit:contain;background:#f5f5f5}
+    figcaption{padding:.55rem .75rem;font-size:.85rem}
+    .categories{padding-block:1.1rem;border-bottom:1px solid var(--line)}
+    .categories h2{font-size:1.22rem;margin-bottom:.55rem}
+    .category-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45rem}
+    .category-grid a{min-height:44px;height:100%;display:flex;align-items:center;padding:.45rem .6rem;background:var(--white);border:1px solid var(--line);border-radius:.45rem;font-weight:700;font-size:.88rem;text-decoration:none;overflow-wrap:anywhere}
+    .category-grid a:hover{background:#e7eff9;border-color:var(--blue);text-decoration:underline}
+    .section{margin-block:clamp(2.4rem,6vw,4.8rem)}
+    .deck{margin-top:.6rem;color:var(--muted);max-width:67ch}
+    .stories,.gallery{display:grid;gap:.8rem;margin-top:1rem}
+    .stories{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .story{padding:1.05rem;border-top:4px solid var(--blue);background:var(--white)}
+    .story .eyebrow{display:block;color:#934005;margin-bottom:.6rem}
+    .story p{margin-top:.65rem}
+    .gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .gallery figure{background:var(--white);border:1px solid var(--line);border-radius:.65rem;overflow:hidden}
+    .gallery img{aspect-ratio:1;object-fit:contain;background:var(--white)}
+    .table-scroll{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:.65rem}
+    table{width:100%;min-width:35rem;border-collapse:collapse;background:var(--white)}
+    caption,th,td{padding:.62rem .8rem;text-align:left;vertical-align:top}
+    caption{background:var(--blue);color:var(--white);font-weight:750}
+    thead{background:#e7eff9}
+    tbody tr+tr{border-top:1px solid var(--line)}
+    .decision{margin-top:.8rem;padding:.8rem 1rem;background:#fff0d9;border-left:4px solid #a44300}
+    details{background:var(--white);border-bottom:1px solid var(--line)}
+    details:first-of-type{margin-top:1rem;border-top:1px solid var(--line)}
+    summary{padding:.72rem .9rem;font-weight:750;cursor:pointer}
+    details p{padding:0 .9rem .85rem;max-width:72ch}
+    .footer{background:var(--blue);color:var(--white);padding-block:.45rem}
+    .mast a:focus-visible,.footer a:focus-visible{outline-color:var(--amber)}
+    @media(max-width:48rem){
+      .category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .stories{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:36rem){
+      .hero-grid{grid-template-columns:1fr}
+      .hero figure{justify-self:start;max-width:19rem}
+      .hero img{aspect-ratio:16/9}
+      .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "FishBuy spreadsheet | Productlinks, maten en QC-foto’s",
+        "description": "Gebruik de FishBuy spreadsheet-gids om productlinks te controleren, maten en QC-foto’s te vergelijken en een pakketraming te maken. Bekijk tien categorieën.",
+        "inLanguage": "nl",
+        "about": [
+          {"@type": "Thing", "name": "Productlinks controleren"},
+          {"@type": "Thing", "name": "Maten en pasvorm vergelijken"},
+          {"@type": "Thing", "name": "QC-foto’s beoordelen"},
+          {"@type": "Thing", "name": "Verzendkosten ramen"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "#veelgestelde-vragen",
+        "inLanguage": "nl",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat is een FishBuy spreadsheet?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Een FishBuy spreadsheet is een overzicht waarin je productlinks, varianten, maten, controlefoto’s en kosten per artikel naast elkaar kunt zetten. Deze gids bevat een voorbeeldblad en verwijst voor de categorieën naar HipobuyFind."}
+          },
+          {
+            "@type": "Question",
+            "name": "Waar vind ik de productcategorieën?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Kies bovenaan een van de tien categorieën. Elke knop opent de bijbehorende categorie op HipobuyFind. Bekijk de actuele productinformatie bij de gekozen vermelding."}
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe weet ik of een oude productlink nog klopt?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Open de bronvermelding en vergelijk de verkoper, het artikelnummer, de kleur en de gekozen maat. Noteer de datum van je controle en controleer de variant opnieuw voordat je betaalt."}
+          },
+          {
+            "@type": "Question",
+            "name": "Wat kun je met een QC-foto controleren?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Een QC-foto kan zichtbare details van een artikel laten zien, zoals naden, kleur of beschadigingen. Vraag een foto met een meetlint als de afmetingen je keuze bepalen. Voor echtheid is afzonderlijk bewijs nodig."}
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe vergelijk ik verzendkosten naar Nederland of België?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Vraag voor hetzelfde pakket een actuele offerte per bestemming en verzendmethode. Gebruik het verpakte gewicht en de pakketafmetingen en noteer welke kosten in de offerte zijn inbegrepen."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/gvbxb/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+      <span class="eyebrow">Koopgids in het Nederlands</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="paginatitel">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Van productlink tot shortlist</p>
+          <h1 id="paginatitel">FishBuy spreadsheet</h1>
+          <p>Verzamel per artikel de bronlink, de gekozen maat, de gewenste controlefoto en de verwachte kosten. Met die gegevens zie je snel welke vondst je kunt vergelijken en welke eerst een extra controle nodig heeft.</p>
+        </div>
+        <figure>
+          <img src="https://static.nike.com/a/images/w_560,c_scale,f_auto,q_auto/f888b4a3-a02a-420d-93e3-cb33c3bb30ac/AIR%2BFORCE%2B1%2B%2707.png" width="560" height="560" alt="Witte Nike Air Force 1 ’07 Texture sneaker" fetchpriority="high" loading="eager">
+          <figcaption>Stijlvoorbeeld · Nike Air Force 1 ’07 Texture</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <nav class="categories wrap" aria-labelledby="categorieen">
+      <h2 id="categorieen">Kies een categorie op HipobuyFind</h2>
+      <ul class="category-grid">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Schoenen</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies en truien</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jassen</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Broeken en shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Petten en mutsen</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Kledingsets</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Ondergoed</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Sportshirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires</a></li>
+      </ul>
+    </nav>
+
+    <section class="wrap section" aria-labelledby="koopgids">
+      <h2 id="koopgids">FishBuy koopgids voor je shortlist</h2>
+      <p class="deck">Geef iedere uitvoering een eigen rij. Zo blijven de maattabel, de verkoopprijs en de controlefoto gekoppeld aan de kleur en maat die je daadwerkelijk vergelijkt.</p>
+      <div class="stories">
+        <article class="story">
+          <span class="eyebrow">01 · Herkomst</span>
+          <h3>FishBuy productlinks controleren</h3>
+          <p>Bewaar de originele productlink naast de link via een aankoopagent. Zoek bij een verlopen link op artikelnummer, verkoper en modelnaam. Controleer bij een productlink uit Taobao, Weidian of 1688 welke kleurvariant is geselecteerd en of de getoonde prijs bij die uitvoering hoort.</p>
+        </article>
+        <article class="story">
+          <span class="eyebrow">02 · Pasvorm</span>
+          <h3>FishBuy QC-foto’s beoordelen</h3>
+          <p>Vraag bij sneakers om de binnenzoollengte in centimeters. Meet bij een eigen hoodie de borstbreedte plat op tafel en vergelijk die met een meting op dezelfde plek. Vraag bij een jas om een close-up van de rits en manchetten. QC staat hier voor kwaliteitscontrole aan de hand van foto’s.</p>
+        </article>
+        <article class="story">
+          <span class="eyebrow">03 · Pakket</span>
+          <h3>FishBuy verzendkosten ramen</h3>
+          <p>Schrijf de artikelprijs, binnenlandse verzending, eventuele servicekosten en internationale verzending apart op. Vergelijk voor Nederland en België actuele offertes op basis van het verpakte gewicht, de doosafmetingen en het volumetrisch gewicht. Leg vast welke posten nog ontbreken in het totaalbedrag in euro’s.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="voorbeeld">
+      <h2 id="voorbeeld">Voorbeeldblad voor schoenen, kleding en accessoires</h2>
+      <p class="deck">Kopieer deze opzet naar je eigen FishBuy spreadsheet. Noteer bij iedere rij de controledatum en één openstaande vraag, zodat je later weet welke informatie je nog moet opvragen.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontaal schuifbaar voorbeeldblad">
+        <table>
+          <caption>Velden voor je eigen productvergelijking</caption>
+          <thead>
+            <tr><th scope="col">Productgroep</th><th scope="col">Vastleggen</th><th scope="col">Controleren</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Sneakers</th><td>Artikelnummer, gekozen EU-maat, bronlink</td><td>Lengte van de binnenzool, zijaanzicht en slijtage aan de zool</td></tr>
+            <tr><th scope="row">T-shirts en truien</th><td>Maattabel, materiaalsamenstelling, kleurvariant</td><td>Borstbreedte, schouderbreedte en ruglengte op dezelfde meetpunten</td></tr>
+            <tr><th scope="row">Broeken en sets</th><td>Taillewijdte, binnenbeenlengte, maten per kledingstuk</td><td>Welke stukken bij de set horen en of beide maten te kiezen zijn</td></tr>
+            <tr><th scope="row">Petten en sieraden</th><td>Hoofdomtrek of polsomtrek, type sluiting</td><td>Verstelbereik van de pet of binnenmaat van de armband</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="decision"><strong>Voorbeeldbeslissing.</strong> Is bij een sportshirt de juiste kleur zichtbaar maar ontbreekt de ruglengte? Zet de rij op ‘wacht op meting’ en vraag om één foto waarop de lengte van kraag tot zoom leesbaar is.</p>
+    </section>
+
+    <section class="wrap section" aria-labelledby="details-vergelijken">
+      <h2 id="details-vergelijken">Vier stijlvoorbeelden om details te vergelijken</h2>
+      <p class="deck">De merkfoto’s dienen als visuele referentie. Vergelijk bij je eigen vondst bijvoorbeeld het zijprofiel van een sneaker, de stof van een hoodie of het mechanisme van een sluiting.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://images.stockx.com/images/Dior-B27-Low-Top-White-Calfskin-Product.jpg?auto=compress&amp;bg=FFFFFF&amp;fit=fill&amp;fm=webp&amp;h=300&amp;q=75&amp;w=420" width="420" height="300" loading="lazy" decoding="async" alt="Zijaanzicht van een witte Dior B27 lage sneaker">
+          <figcaption>Dior B27 · zijprofiel</figcaption>
+        </figure>
+        <figure>
+          <img src="https://d141zx60z515qt.cloudfront.net/mp62586fb643/prab8b5/img200_1200w.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Zwarte Gucci-hoodie met een tonaal GG-patroon">
+          <figcaption>Gucci · stof en patroon</figcaption>
+        </figure>
+        <figure>
+          <img src="https://in.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-light-reversible-cap--M5785L_PM2_Front%20view.png?hei=360&amp;wid=360" width="360" height="360" loading="lazy" decoding="async" alt="Bruine Louis Vuitton LV Light pet met monogrampatroon">
+          <figcaption>Louis Vuitton · petvorm</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracelet-clic-h--700001F%204P-front-1-300-0-1000-1000_b.jpg" width="1000" height="1000" loading="lazy" decoding="async" alt="Hermès Clic H armband met een goudkleurige H-sluiting">
+          <figcaption>Hermès Clic H · sluiting</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="veelgestelde-vragen">
+      <h2 id="veelgestelde-vragen">Veelgestelde vragen</h2>
+      <details open>
+        <summary>Wat is een FishBuy spreadsheet?</summary>
+        <p>Een FishBuy spreadsheet is een overzicht waarin je productlinks, varianten, maten, controlefoto’s en kosten per artikel naast elkaar kunt zetten. Deze gids bevat een voorbeeldblad en verwijst voor de categorieën naar HipobuyFind.</p>
+      </details>
+      <details>
+        <summary>Waar vind ik de productcategorieën?</summary>
+        <p>Kies bovenaan een van de tien categorieën. Elke knop opent de bijbehorende categorie op HipobuyFind. Bekijk de actuele productinformatie bij de gekozen vermelding.</p>
+      </details>
+      <details>
+        <summary>Hoe weet ik of een oude productlink nog klopt?</summary>
+        <p>Open de bronvermelding en vergelijk de verkoper, het artikelnummer, de kleur en de gekozen maat. Noteer de datum van je controle en controleer de variant opnieuw voordat je betaalt.</p>
+      </details>
+      <details>
+        <summary>Wat kun je met een QC-foto controleren?</summary>
+        <p>Een QC-foto kan zichtbare details van een artikel laten zien, zoals naden, kleur of beschadigingen. Vraag een foto met een meetlint als de afmetingen je keuze bepalen. Voor echtheid is afzonderlijk bewijs nodig.</p>
+      </details>
+      <details>
+        <summary>Hoe vergelijk ik verzendkosten naar Nederland of België?</summary>
+        <p>Vraag voor hetzelfde pakket een actuele offerte per bestemming en verzendmethode. Gebruik het verpakte gewicht en de pakketafmetingen en noteer welke kosten in de offerte zijn inbegrepen.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Onafhankelijke koopgids · Merken afgebeeld ter illustratie</span>
+      <a href="https://www.hipobuyfind.com">Naar HipobuyFind</a>
+    </div>
+  </footer>
+</body>
+</html>
